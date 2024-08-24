@@ -55,6 +55,7 @@ function showActorInfo(actor) {
   
   const actorName = document.createElement("h2");
   actorName.textContent = actor.name;
+  document.title = actor.name;
   
   const actorBiography = document.createElement("p");
   actorBiography.textContent = actor.data.biography;  ;
