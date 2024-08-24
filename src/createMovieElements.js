@@ -11,8 +11,8 @@ export function createMovieElements(movie) {
   const movieLinkTwo = document.createElement("a");
   movieLink.append(movieImg);
   movieLinkTwo.append(movieTitle);
-  movieLink.href = `../detail.html?id=${movie.id}`
-  movieLinkTwo.href = `../detail.html?id=${movie.id}`
+  movieLink.href = `../detail/detail.html?id=${movie.id}`
+  movieLinkTwo.href = `../detail/detail.html?id=${movie.id}`
 
  
   
