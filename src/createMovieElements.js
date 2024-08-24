@@ -12,7 +12,7 @@ export function createMovieElements(movie) {
   movieLink.append(movieImg);
   movieLinkTwo.append(movieTitle);
   movieLink.href = `./detail.html?id=${movie.id}`
-  movieLinkTwo.href = `./dist/detail.html?id=${movie.id}`
+  movieLinkTwo.href = `./detail.html?id=${movie.id}`
 
  
   
