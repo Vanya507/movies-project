@@ -8,6 +8,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         detail: resolve(__dirname, 'detail.html'),
+        actorInfo: resolve(__dirname, 'actorInfo.html'),
       },
     },
   },
