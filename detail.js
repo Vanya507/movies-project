@@ -110,7 +110,7 @@ function showCact(cast) {
       const actorLink = document.createElement("a");
 
       actorLink.append(actorImg);
-      actorLink.href = `../actorInfo.html?id=${element.id}`;
+      actorLink.href = `./actorInfo.html?id=${element.id}`;
 
       actorsList.append(actorInfo);
       actorInfo.append(actorLink, actorName, character);
@@ -143,7 +143,7 @@ function showRec(rec) {
     const recTitle = document.createElement("h3");
     const recLink = document.createElement("a");
     recLink.append(recImg);
-    recLink.href = `../detail.html?id=${element.id}`;
+    recLink.href = `./detail.html?id=${element.id}`;
   
     recImg.src = `https://media.themoviedb.org/t/p/w250_and_h141_face${element.backdrop_path}`;
     recTitle.textContent = element.title;
