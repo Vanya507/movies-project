@@ -2,6 +2,7 @@ import axios from "axios";
 import "./reset.css";
 import { getMovies } from "./src/api";
 
+
 const searchParam = new URLSearchParams(location.search);
 
 console.log(searchParam.get("id"));
@@ -74,7 +75,7 @@ function showMovieCredits(credits) {
       const movieLink = document.createElement("a");
 
       movieLink.append(movieImg);
-      movieLink.href = `../detail.html?id=${element.id}`;
+      movieLink.href = `../detail/detail.html?id=${element.id}`;
 
       moviesList.append(movieInfo);
       movieInfo.append(movieLink, movieName);
