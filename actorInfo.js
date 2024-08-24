@@ -54,8 +54,8 @@ function showActorInfo(actor) {
   actorImg.src = `https://media.themoviedb.org/t/p/w300_and_h450_face${actor.data.profile_path}`;
   
   const actorName = document.createElement("h2");
-  actorName.textContent = actor.name;
-  document.title = actor.name;
+  actorName.textContent = actor.data.name;
+  document.title = actor.data.name;
   
   const actorBiography = document.createElement("p");
   actorBiography.textContent = actor.data.biography;  ;
