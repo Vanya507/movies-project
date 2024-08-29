@@ -1,5 +1,4 @@
-import { searchedMoviesList, search, getSearch } from "./domElements";
-import { createMovieElements } from "./createMovieElements";
+import { search, getSearch } from "./domElements";
 import { options } from "./api";
 
 export const searchMovie = async (query) => {
@@ -16,25 +15,20 @@ export const searchMovie = async (query) => {
 };
 
 const handleSearch = () => {
-  const query = search.value;
-  searchedMoviesList.innerHTML = "";
-
-  searchMovie(query).then((data) => {
-    data.results.forEach((movie) => {
-      searchedMoviesList.append(createMovieElements(movie));
-    });
-    document.body.append(searchedMoviesList);
-    search.value = "";
-  });
+  const query = search.value.trim();
+  search.value = "";
+  localStorage.setItem("searchQuery", query); 
 };
 
 getSearch.addEventListener("click", (e) => {
   handleSearch();
+  window.location.href = "../searchedMovies.html";
 });
 
 search.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     e.preventDefault();
     handleSearch();
+    window.location.href = "../searchedMovies.html";
   }
 });

@@ -25,10 +25,13 @@ h2 {
 
 .search-movies {
   max-width: 1200px;
-  height: 200px;
+  height: 300px;
   margin: auto;
   position: relative;
-  background-color: rgb(48, 48, 87);
+  /* background-color: rgb(48, 48, 87); */
+  background-image: url("https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/nb3xI8XI3w4pMVZ38VijbsyBqP4.jpg");
+  background-size: cover;
+  background-position: center;
   margin-bottom: 20px;
 }
 
@@ -44,7 +47,7 @@ button {
   border-radius: 30px;
   position: fixed;
   position: absolute;
-  top: 50%;
+  top: 65%;
   right: 3%;
   color: #fff;
   cursor: pointer;
@@ -56,7 +59,7 @@ button:hover {
 
 input {
   position: relative;
-  top: 50%;
+  top: 65%;
   left: 4%;
   width: 80%;
   height: 20px;

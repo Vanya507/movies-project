@@ -88,8 +88,6 @@ function showMovieCredits(credits) {
 }
   
 
-
-
 Promise.all([getCastInfo(), getMovieCreditstInfo()])
   .then(([castInfoResponse, movieCreditsResponse]) => {
     showActorInfo(castInfoResponse);
