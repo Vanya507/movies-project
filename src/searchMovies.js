@@ -22,13 +22,13 @@ const handleSearch = () => {
 
 getSearch.addEventListener("click", (e) => {
   handleSearch();
-  window.location.href = "./movies-project/searchedMovies.html";
+  window.location.href = "./searchedMovies.html";
 });
 
 search.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     e.preventDefault();
     handleSearch();
-    window.location.href = "./movies-project/searchedMovies.html";
+    window.location.href = "./searchedMovies.html";
   }
 });
