@@ -22,7 +22,7 @@ const handleSearch = () => {
 
 getSearch.addEventListener("click", (e) => {
   handleSearch();
-  window.location.href = "../searchedMovies.html";
+  window.location.href = "./movies-project/searchedMovies.html";
 });
 
 search.addEventListener("keypress", (e) => {
