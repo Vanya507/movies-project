@@ -7,9 +7,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        detail: resolve(__dirname, 'detail.html'),
-        actorInfo: resolve(__dirname, 'actorInfo.html'),
-        searchedMovies: resolve(__dirname, 'searchedMovies.html')
+        detail: resolve(__dirname, './detail/detail.html'),
+        actorInfo: resolve(__dirname, './actorInfo/actorInfo.html'),
+        searchedMovies: resolve(__dirname, './searchedMovies/searchedMovies.html')
       },
     },
   },

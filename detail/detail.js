@@ -1,7 +1,7 @@
 import axios from "axios";
 import dayjs from "dayjs";
 import duration from "dayjs/plugin/duration";
-import "./reset.css";
+import "../styles/reset.css";
 
 
 dayjs.extend(duration);
@@ -70,7 +70,9 @@ function showMovie(movie) {
   const movieImg = document.createElement("img");
   const runTime = document.createElement("h4");
 
-  movieContainer.style.backgroundImage = `url(https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces${movie.data.backdrop_path})`;
+  movieContainer.style.backgroundImage = movie.data.backdrop_path
+  ? `url(https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces${movie.data.backdrop_path})`
+  : '../pics/notFound.jpg';
   movieContainer.classList.add("bgTitle");
   movieTitle.textContent = movie.data.title;
   document.title = movie.data.title;
@@ -82,7 +84,9 @@ function showMovie(movie) {
   movieRelease.textContent = dayjs(movie.data.release_date).format(
     "MM/DD/YYYY"
   );
-  movieImg.src = `https://media.themoviedb.org/t/p/w300_and_h450_face${movie.data.poster_path}`;
+  movieImg.src = movie.data.poster_path
+  ? `https://media.themoviedb.org/t/p/w300_and_h450_face${movie.data.poster_path}`
+  : '../pics/notFound.jpg';
 
   movieContainer.append(movieImg, movieTitle, runTime, movieRelease);
   return movieContainer;
@@ -110,11 +114,13 @@ function showCact(cast) {
       const actorLink = document.createElement("a");
 
       actorLink.append(actorImg);
-      actorLink.href = `./actorInfo.html?id=${element.id}`;
+      actorLink.href = `../actorInfo/actorInfo.html?id=${element.id}`;
 
       actorsList.append(actorInfo);
       actorInfo.append(actorLink, actorName, character);
-      actorImg.src = `https://media.themoviedb.org/t/p/w138_and_h175_face/${element.profile_path}`;
+      actorImg.src = element.profile_path
+      ? `https://media.themoviedb.org/t/p/w138_and_h175_face/${element.profile_path}`
+      : '../pics/notFound.jpg';
       actorName.textContent = element.name;
       character.textContent = element.character;
 
@@ -145,7 +151,9 @@ function showRec(rec) {
     recLink.append(recImg);
     recLink.href = `./detail.html?id=${element.id}`;
   
-    recImg.src = `https://media.themoviedb.org/t/p/w250_and_h141_face${element.backdrop_path}`;
+    recImg.src = element.backdrop_path
+    ? `https://media.themoviedb.org/t/p/w250_and_h141_face${element.backdrop_path}`
+    : '../pics/notFound.jpg';
     recTitle.textContent = element.title;
   
     recInfo.append(recLink, recTitle);

@@ -1,9 +1,10 @@
 import dayjs from "dayjs";
-import "./reset.css";
+import "../styles/reset.css";
 
-// import { searchedMoviesList, search, getSearch } from "./src/createMovieElements";
-import { options } from "./src/api";
+import { options } from "../src/api";
 
+const contanier = document.createElement("section");
+document.body.append(contanier);
 const searchedMoviesList = document.createElement("ul");
 
 export const searchMovie = async (query) => {
@@ -31,14 +32,17 @@ export function showSearchedMovies(movie) {
   const movieLinkTwo = document.createElement("a");
   movieLink.append(movieImg);
   movieLinkTwo.append(movieTitle);
-  movieLink.href = `./detail.html?id=${movie.id}`;
-  movieLinkTwo.href = `./detail.html?id=${movie.id}`;
+  movieLink.href = `../detail/detail.html?id=${movie.id}`;
+  movieLinkTwo.href = `../detail/detail.html?id=${movie.id}`;
 
   movieTitle.textContent = movie.title;
   movieDesc.textContent = movie.overview;
   
   movieRelease.textContent = dayjs(movie.release_date).format("MMM DD, YYYY");
-  movieImg.src = `https://media.themoviedb.org/t/p/w94_and_h141_face${movie.poster_path}`;
+  // movieImg.src = `https://media.themoviedb.org/t/p/w94_and_h141_face${movie.poster_path}`;
+  movieImg.src = movie.poster_path 
+  ? `https://media.themoviedb.org/t/p/w94_and_h141_face${movie.poster_path}`
+  : '../pics/notFound.jpg';
 
   movieElements.append(movieLink, movieLinkTwo, movieRelease, movieDesc);
   return movieElements;
@@ -52,12 +56,12 @@ const handleSearch = async () => {
       data.results.forEach((movie) => {
         searchedMoviesList.append(showSearchedMovies(movie));
       });
-      document.body.append(searchedMoviesList);
+      contanier.append(searchedMoviesList);
     } else {
-      document.body.textContent = "No movies found.";
+      contanier.textContent = "No movies found.";
     }
   } else {
-    document.body.textContent = "There are no movies that matched your query.";
+    contanier.textContent = "There are no movies that matched your query.";
   }
 };
 
