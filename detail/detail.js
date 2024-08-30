@@ -120,7 +120,7 @@ function showCact(cast) {
       actorInfo.append(actorLink, actorName, character);
       actorImg.src = element.profile_path
       ? `https://media.themoviedb.org/t/p/w138_and_h175_face/${element.profile_path}`
-      : '/notFound.jpg';
+      : './notFound.jpg';
       actorName.textContent = element.name;
       character.textContent = element.character;
 
