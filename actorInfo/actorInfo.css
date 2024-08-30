@@ -18,7 +18,7 @@ ul {
     overflow-x: scroll;
     overflow-y: hidden;
     max-width: 1000px;
-    margin: auto;
+    /* margin: auto; */
     margin-top: 20px;
 }
 
