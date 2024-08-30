@@ -42,7 +42,7 @@ export function showSearchedMovies(movie) {
   // movieImg.src = `https://media.themoviedb.org/t/p/w94_and_h141_face${movie.poster_path}`;
   movieImg.src = movie.poster_path 
   ? `https://media.themoviedb.org/t/p/w94_and_h141_face${movie.poster_path}`
-  : '../pics/notFound.jpg';
+  : 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fimage-not-found&psig=AOvVaw3cSdQM1-8_qgkSd_10Dlch&ust=1725102105029000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCIiWzqPInIgDFQAAAAAdAAAAABAE';
 
   movieElements.append(movieLink, movieLinkTwo, movieRelease, movieDesc);
   return movieElements;
