@@ -153,9 +153,12 @@ function showRec(rec) {
   
     console.log(import.meta.env.MODE === "development");
     
-    recImg.src = element.backdrop_path
-    ? `https://media.themoviedb.org/t/p/w250_and_h141_face${element.backdrop_path}`
-    : '/notFound.jpg';
+    if (element.backdrop_path) {
+      recImg.src = `https://media.themoviedb.org/t/p/w250_and_h141_face${element.backdrop_path}`;
+    } else if (import.meta.env.MODE === "development") {
+      recImg.src = '/movies-project/notFound.jpg';
+    }
+
     recTitle.textContent = element.title;
   
     recInfo.append(recLink, recTitle);
