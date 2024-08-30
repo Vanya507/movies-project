@@ -83,7 +83,7 @@ function showMovieCredits(credits) {
       movieInfo.append(movieLink, movieName);
       movieImg.src = element.poster_path
       ? `https://media.themoviedb.org/t/p/w130_and_h195_face/${element.poster_path}`
-      : "/notFound.jpg";
+      : "./notFound.jpg";
       movieName.textContent = element.original_title;
 
       count++;

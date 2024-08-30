@@ -72,7 +72,7 @@ function showMovie(movie) {
 
   movieContainer.style.backgroundImage = movie.data.backdrop_path
   ? `url(https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces${movie.data.backdrop_path})`
-  : '/notFound.jpg';
+  : './notFound.jpg';
   movieContainer.classList.add("bgTitle");
   movieTitle.textContent = movie.data.title;
   document.title = movie.data.title;
@@ -86,7 +86,7 @@ function showMovie(movie) {
   );
   movieImg.src = movie.data.poster_path
   ? `https://media.themoviedb.org/t/p/w300_and_h450_face${movie.data.poster_path}`
-  : '/notFound.jpg';
+  : './notFound.jpg';
 
   movieContainer.append(movieImg, movieTitle, runTime, movieRelease);
   return movieContainer;
@@ -151,9 +151,11 @@ function showRec(rec) {
     recLink.append(recImg);
     recLink.href = `./detail.html?id=${element.id}`;
   
+    console.log(import.meta.env.MODE === "development");
+    
     recImg.src = element.backdrop_path
     ? `https://media.themoviedb.org/t/p/w250_and_h141_face${element.backdrop_path}`
-    : '/notFound.jpg';
+    : './notFound.jpg';
     recTitle.textContent = element.title;
   
     recInfo.append(recLink, recTitle);
