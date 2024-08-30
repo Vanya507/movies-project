@@ -86,7 +86,7 @@ function showMovie(movie) {
   );
   movieImg.src = movie.data.poster_path
   ? `https://media.themoviedb.org/t/p/w300_and_h450_face${movie.data.poster_path}`
-  : 'notFound.jpg';
+  : '/notFound.jpg';
 
   movieContainer.append(movieImg, movieTitle, runTime, movieRelease);
   return movieContainer;
@@ -120,7 +120,7 @@ function showCact(cast) {
       actorInfo.append(actorLink, actorName, character);
       actorImg.src = element.profile_path
       ? `https://media.themoviedb.org/t/p/w138_and_h175_face/${element.profile_path}`
-      : 'notFound.jpg';
+      : '/notFound.jpg';
       actorName.textContent = element.name;
       character.textContent = element.character;
 
@@ -155,7 +155,7 @@ function showRec(rec) {
     
     recImg.src = element.backdrop_path
     ? `https://media.themoviedb.org/t/p/w250_and_h141_face${element.backdrop_path}`
-    : 'notFound.jpg';
+    : '/notFound.jpg';
     recTitle.textContent = element.title;
   
     recInfo.append(recLink, recTitle);
