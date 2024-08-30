@@ -1,1 +1,0 @@
-const e=document.querySelector(".trending-movies"),t=document.createElement("ul");document.createElement("ul");const n=document.querySelector("input"),o=document.querySelector("button");export{o as g,t as m,n as s,e as t};

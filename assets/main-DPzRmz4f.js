@@ -1,0 +1,1 @@
+import"./axios-DjeU30Zb.js";import{g as s,s as r,a as t}from"./api-DiE11HOU.js";import"./dayjs.min-Bof1u0Bp.js";const a=()=>{const e=r.value.trim();r.value="",e&&(window.location.href=`searchedMovies/searchedMovies.html?search=${e}`)};s.addEventListener("click",()=>{a()});r.addEventListener("keypress",e=>{e.key==="Enter"&&(e.preventDefault(),a())});t();
