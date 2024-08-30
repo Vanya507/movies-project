@@ -17,18 +17,19 @@ export const searchMovie = async (query) => {
 const handleSearch = () => {
   const query = search.value.trim();
   search.value = "";
-  localStorage.setItem("searchQuery", query); 
+  window.location.href = `searchedMovies/searchedMovies.html?search=${query}`;
 };
 
 getSearch.addEventListener("click", () => {
   handleSearch();
-  window.location.href = "searchedMovies/searchedMovies.html";
 });
 
 search.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
+  const query = search.value.trim();
     e.preventDefault();
     handleSearch();
-    window.location.href = "searchedMovies/searchedMovies.html";
+    window.location.href = `searchedMovies/searchedMovies.html?search=${query}`;
+  
   }
 });

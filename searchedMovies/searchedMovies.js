@@ -1,4 +1,5 @@
 import dayjs from "dayjs";
+import axios from "axios";
 import "../styles/reset.css";
 
 import { options } from "../src/api";
@@ -7,20 +8,22 @@ const contanier = document.createElement("section");
 document.body.append(contanier);
 const searchedMoviesList = document.createElement("ul");
 
-export const searchMovie = async (query) => {
-  try {
-    const response = await fetch(
-      `https://api.themoviedb.org/3/search/movie?query=${query}&language=en-US&page=1`,
-      options
-    );
-    const data = await response.json();
-    console.log(data);
+const searchParams = new URLSearchParams(location.search);
 
-    return data;
-  } catch (error) {
-    console.error("Error fetching movie data:", error);
+console.log(searchParams.get("query"));
+
+const url = `https://api.themoviedb.org/3/search/movie/${searchParams.get(
+  "query"
+)}?language=en-US`;
+
+export async function searchMovie() {
+  try {
+    const res = await axios.get(url, options);
+    console.log(res);
+  } catch (e) {
+    console.log("Error fetching movie:", e);
   }
-};
+}
 
 export function showSearchedMovies(movie) {
   const movieElements = document.createElement("li");
@@ -48,10 +51,7 @@ export function showSearchedMovies(movie) {
   return movieElements;
 }
 
-const handleSearch = async () => {
-  const query = localStorage.getItem("searchQuery");
-  if (query) {
-    const data = await searchMovie(query);
+const handleSearch = async (data) => {
     if (data.results.length > 0) {
       data.results.forEach((movie) => {
         searchedMoviesList.append(showSearchedMovies(movie));
@@ -60,9 +60,6 @@ const handleSearch = async () => {
     } else {
       contanier.textContent = "No movies found.";
     }
-  } else {
-    contanier.textContent = "There are no movies that matched your query.";
-  }
 };
 
 handleSearch();
