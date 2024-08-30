@@ -15,7 +15,7 @@ export const searchMovie = async (query) => {
     );
     const data = await response.json();
     console.log(data);
-    
+
     return data;
   } catch (error) {
     console.error("Error fetching movie data:", error);
@@ -37,12 +37,12 @@ export function showSearchedMovies(movie) {
 
   movieTitle.textContent = movie.title;
   movieDesc.textContent = movie.overview;
-  
+
   movieRelease.textContent = dayjs(movie.release_date).format("MMM DD, YYYY");
   // movieImg.src = `https://media.themoviedb.org/t/p/w94_and_h141_face${movie.poster_path}`;
-  movieImg.src = movie.poster_path 
-  ? `https://media.themoviedb.org/t/p/w94_and_h141_face${movie.poster_path}`
-  : 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fimage-not-found&psig=AOvVaw3cSdQM1-8_qgkSd_10Dlch&ust=1725102105029000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCIiWzqPInIgDFQAAAAAdAAAAABAE';
+  movieImg.src = movie.poster_path
+    ? `https://media.themoviedb.org/t/p/w94_and_h141_face${movie.poster_path}`
+    : "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fimage-not-found&psig=AOvVaw3cSdQM1-8_qgkSd_10Dlch&ust=1725102105029000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCIiWzqPInIgDFQAAAAAdAAAAABAE";
 
   movieElements.append(movieLink, movieLinkTwo, movieRelease, movieDesc);
   return movieElements;
