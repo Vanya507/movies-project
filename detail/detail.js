@@ -156,6 +156,9 @@ function showRec(rec) {
     if (element.backdrop_path) {
       recImg.src = `https://media.themoviedb.org/t/p/w250_and_h141_face${element.backdrop_path}`;
     } else if (import.meta.env.MODE === "development") {
+      recImg.src = '/notFound.jpg';
+    }
+    else {
       recImg.src = '/movies-project/notFound.jpg';
     }
 
