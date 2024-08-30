@@ -86,7 +86,7 @@ function showMovie(movie) {
   );
   movieImg.src = movie.data.poster_path
   ? `https://media.themoviedb.org/t/p/w300_and_h450_face${movie.data.poster_path}`
-  : '/notFound.jpg';
+  : './notFound.jpg';
 
   movieContainer.append(movieImg, movieTitle, runTime, movieRelease);
   return movieContainer;
