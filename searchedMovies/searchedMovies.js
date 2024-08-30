@@ -51,9 +51,9 @@ export function showSearchedMovies(movie) {
   return movieElements;
 }
 
-const handleSearch = async (data) => {
-    if (data.results.length > 0) {
-      data.results.forEach((movie) => {
+const handleSearch = async (movie) => {
+    if (movie.data.results.length > 0) {
+      movie.data.results.forEach((movie) => {
         searchedMoviesList.append(showSearchedMovies(movie));
       });
       contanier.append(searchedMoviesList);
