@@ -42,7 +42,7 @@ export function showSearchedMovies(movie) {
   // movieImg.src = `https://media.themoviedb.org/t/p/w94_and_h141_face${movie.poster_path}`;
   movieImg.src = movie.poster_path
     ? `https://media.themoviedb.org/t/p/w94_and_h141_face${movie.poster_path}`
-    : "./notFound.jpg";
+    : "notFound.jpg";
 
   movieElements.append(movieLink, movieLinkTwo, movieRelease, movieDesc);
   return movieElements;
