@@ -1,0 +1,1 @@
+import"./reset-D1r4zEBr.js";import"./dayjs.min-Bof1u0Bp.js";import"./domElements-BbaI1mQb.js";const e=document.createElement("section");document.body.append(e);document.createElement("ul");const t=new URLSearchParams(location.search);console.log(t.get("query"));`${t.get("query")}`;const n=async o=>{o.results.length>0||(e.textContent="No movies found.")};n();
