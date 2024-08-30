@@ -68,11 +68,16 @@ function showMovie(movie) {
   const movieTitle = document.createElement("h2");
   const movieRelease = document.createElement("h4");
   const movieImg = document.createElement("img");
+  movieImg.classList.add("movieImg")
   const runTime = document.createElement("h4");
 
-  movieContainer.style.backgroundImage = movie.data.backdrop_path
-  ? `url(https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces${movie.data.backdrop_path})`
-  : 'notFound.jpg';
+  if(movie.data.backdrop_path) {
+    movieContainer.style.backgroundImage = `url(https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces${movie.data.backdrop_path})`
+  } else if (import.meta.env.MODE === "development") {
+    movieContainer.style.backgroundColor = "rgba(227, 227, 227, 1)"
+  } else {
+    movieContainer.style.backgroundColor = "rgba(227, 227, 227, 1)"
+  }
   movieContainer.classList.add("bgTitle");
   movieTitle.textContent = movie.data.title;
   document.title = movie.data.title;
@@ -84,9 +89,14 @@ function showMovie(movie) {
   movieRelease.textContent = dayjs(movie.data.release_date).format(
     "MM/DD/YYYY"
   );
-  movieImg.src = movie.data.poster_path
-  ? `https://media.themoviedb.org/t/p/w300_and_h450_face${movie.data.poster_path}`
-  : './notFound.jpg';
+
+  if(movie.data.poster_path) {
+    movieImg.src = `https://media.themoviedb.org/t/p/w300_and_h450_face${movie.data.poster_path}`
+  } else if (import.meta.env.MODE === "development") {
+    movieImg.src = '/notFound.jpg'
+  } else {
+    movieImg.src = '/movies-project/notFound.jpg';
+  }
 
   movieContainer.append(movieImg, movieTitle, runTime, movieRelease);
   return movieContainer;
@@ -108,6 +118,7 @@ function showCact(cast) {
   cast.data.cast.forEach((element) => {
     if (count < 9) {
       const actorImg = document.createElement("img");
+      actorImg.classList.add("actorImg")
       const actorInfo = document.createElement("li");
       const actorName = document.createElement("h3");
       const character = document.createElement("h5");
@@ -118,9 +129,14 @@ function showCact(cast) {
 
       actorsList.append(actorInfo);
       actorInfo.append(actorLink, actorName, character);
-      actorImg.src = element.profile_path
-      ? `https://media.themoviedb.org/t/p/w138_and_h175_face/${element.profile_path}`
-      : '/notFound.jpg';
+
+      if(element.profile_path) {
+        actorImg.src = `https://media.themoviedb.org/t/p/w138_and_h175_face/${element.profile_path}`
+      } else if (import.meta.env.MODE === "development") {
+        actorImg.src = '/notFound.jpg'
+      } else {
+        actorImg.src = '/movies-project/notFound.jpg';
+      }
       actorName.textContent = element.name;
       character.textContent = element.character;
 
@@ -146,6 +162,7 @@ function showRec(rec) {
     const recInfo = document.createElement("li");
   
     const recImg = document.createElement("img");
+    recImg.classList.add("recImg");
     const recTitle = document.createElement("h3");
     const recLink = document.createElement("a");
     recLink.append(recImg);

@@ -4,6 +4,11 @@ img {
     height: 141px;
 }
 
+.movieImg {
+    width: 94px;
+    height: 141px;
+}
+
 ul {
     display: flex;
     align-items: center;

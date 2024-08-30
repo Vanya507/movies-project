@@ -14,22 +14,25 @@ export const searchMovie = async (query) => {
   }
 };
 
+
+
 const handleSearch = () => {
   const query = search.value.trim();
   search.value = "";
-  window.location.href = `searchedMovies/searchedMovies.html?search=${query}`;
+  if (query) {
+    window.location.href = `searchedMovies/searchedMovies.html?search=${query}`;
+  }
 };
 
+// Attach event listener for search button click
 getSearch.addEventListener("click", () => {
   handleSearch();
 });
 
+// Attach event listener for Enter key press
 search.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
-  const query = search.value.trim();
     e.preventDefault();
     handleSearch();
-    window.location.href = `searchedMovies/searchedMovies.html?search=${query}`;
-  
   }
 });

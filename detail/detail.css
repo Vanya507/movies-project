@@ -45,6 +45,21 @@ ul li {
     box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
 }
 
+.recImg {
+    width: 250px;
+    height: 141px;
+}
+
+.movieImg {
+    width: 300px;
+    height: 450px;
+}
+
+.actorImg {
+    width: 138px;
+    height: 175px;
+}
+
 ::-webkit-scrollbar {
     height: 7px;
 }
