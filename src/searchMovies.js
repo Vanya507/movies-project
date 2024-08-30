@@ -20,7 +20,7 @@ const handleSearch = () => {
   localStorage.setItem("searchQuery", query); 
 };
 
-getSearch.addEventListener("click", () => {
+getSearch.addEventListener("click", (e) => {
   handleSearch();
   window.location.href = "searchedMovies/searchedMovies.html";
 });
