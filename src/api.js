@@ -2,7 +2,7 @@ import axios from "axios";
 import { movieList, trendingMovies } from "./domElements";
 import { createMovieElements } from "./createMovieElements";
 
-const url = "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1";
+export const url = "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1";
 export const options = {
   method: "GET",
   headers: {

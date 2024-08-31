@@ -28,7 +28,6 @@ h2 {
   height: 300px;
   margin: auto;
   position: relative;
-  background-image: url("https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/nb3xI8XI3w4pMVZ38VijbsyBqP4.jpg");
   background-size: cover;
   background-position: center;
   margin-bottom: 20px;
@@ -36,6 +35,7 @@ h2 {
 
 .trending-movies ul {
   margin: auto;
+  margin-top: 20px;
 }
 
 button {
