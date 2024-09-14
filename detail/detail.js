@@ -34,6 +34,8 @@ const options = {
 async function getMovie() {
   try {
     const res = await axios.get(url, options);
+    console.log(res);
+    
     return res;
   } catch (e) {
     console.log("Error fetching movie:", e);
@@ -43,7 +45,6 @@ async function getMovie() {
 async function getCast() {
   try {
     const res = await axios.get(castUrl, options);
-    console.log(res);
     
     return res;
   } catch (e) {
